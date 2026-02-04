@@ -1,3 +1,11 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
 body {
   background-color: #f4f4f4;
 }
@@ -6,22 +14,69 @@ body {
   display: flex;
   max-width: 1100px;
   margin: 40px auto;
-  background: white;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-/* LEFT */
+/* ================= LEFT SIDEBAR ================= */
 .sidebar {
   width: 30%;
   background: #ac8eac; /* light purple */
- padding: 300px 30px 30px 30px;
-  border-radius: 0 20px 20px 0; 
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.profile {
+  margin-top: -60px; 
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  background-color: #ffffff;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
 .sidebar h1 {
   font-size: 32px;
-  margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 6px;
 }
-.sidebar p, .sidebar li {
+
+.subtitle {
+  font-size: 14px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+
+.sidebar section {
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+.sidebar h2 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 4px;
+}
+
+.sidebar p,
+.sidebar li {
   font-size: 14px;
   margin-bottom: 6px;
 }
@@ -29,6 +84,23 @@ body {
 .sidebar ul {
   list-style: disc;
   margin-left: 18px;
+}
+
+/* ================= RIGHT CONTENT ================= */
+.content {
+  width: 70%;
+  padding: 40px;
+}
+
+.content section {
+  margin-bottom: 30px;
+}
+
+.content h2 {
+  font-size: 18px;
+  margin-bottom: 14px;
+  border-bottom: 2px solid #999;
+  padding-bottom: 5px;
 }
 
 .edu-item {
@@ -57,52 +129,22 @@ body {
   color: #666;
 }
 
-.profile-pic {
-  width: 120px;
-  height: 200px;
-  margin: 0 auto 80px; /* center and space below */
-  border-radius: 50%;  
-  overflow: hidden;
-  border: 3px solid #fff; 
-  background-color: #fff; 
-}
 
-.profile-pic img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* ensures image fills circle */
-}
-
-
-/* RIGHT */
-.content {
-  width: 70%;
-  padding: 30px 40px;
-}
-
-.content section {
-  margin-bottom: 30px;
-}
-
-.content h2 {
-  font-size: 18px;
+.project-item {
   margin-bottom: 15px;
-  border-bottom: 2px solid #999;
 }
 
-.item {
-  margin-bottom: 12px;
-}
-
-.item h3 {
+.project-item h3 {
   font-size: 15px;
 }
 
-.item span {
+.project-item p {
   font-size: 13px;
   color: #555;
+  margin-top: 3px;
 }
 
+/* LISTS */
 .content ul {
   margin-left: 18px;
 }
@@ -111,13 +153,23 @@ body {
   margin-bottom: 8px;
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
   .cv-container {
     flex-direction: column;
+    border-radius: 0;
   }
 
-  .sidebar, .content {
+  .sidebar,
+  .content {
     width: 100%;
+  }
+
+  .profile {
+    margin-top: 0;
+  }
+
+  .sidebar {
+    padding-top: 30px;
   }
 }
